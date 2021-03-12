@@ -1,0 +1,138 @@
+header
+    background-color: var(--colorWhite)
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    height: 80px
+    display: flex
+    align-items: center
+    z-index: 10
+    border-bottom: 1px solid var(--borderHeader)
+    @media tablet
+        height: auto //10.47vw
+    
+    .wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+        nav
+            display: flex
+            justify-content: space-between
+            @media tablet
+                display: flex
+                justify-content: space-between
+                flex-basis: 70%
+                align-items: center
+
+.logo
+    text-decoration: none
+    font-family: var(--ffLogo)
+    color: var(--colorBlackMenu)
+    font-size: 26px
+    line-height: floor((31 / 26), 2)
+    letter-spacing: 0.03em
+    margin-right: 93px
+    @media tablet
+        font-size: 3.22vw
+        margin-right: 11.5vw
+    @media mobile768
+        margin-right: 10.7vw
+    
+    &--blue-color
+        color: var(--partColorLogoBlue)
+
+.main-menu
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex: 1 0 70%
+    @media tablet
+        flex: none
+        flex-basis: 57%
+    &__item
+        a
+            text-decoration: none
+            color: var(--colorBlackMenu)
+            transition: 0.3s
+            font-family: var(--ffMedium)
+            padding: 31px 0
+            position: relative
+            @media tablet
+                padding: 4.1vw 0
+                font-size: 1.9vw
+                display: block
+            &:after
+                content: ""
+                width: 0
+                height: 4px
+                background-color: var(--colorButton)
+                z-index: 11
+                display: block
+                position: absolute
+                bottom: 0
+                border-radius: 2px
+                transition: width, cubic-bezier(0.4, 0, 0.2, 1) 0.25s
+                @media tablet
+                    bottom: -1px
+            &:focus
+                color: var(--colorMenuHover)
+                &:after
+                    width: 100%
+        &:hover
+            .main-menu__link
+                &:after
+                    width: 100%
+                color: var(--colorMenuHover)
+        
+        
+        &--current
+            .main-menu__link
+                color: var(--colorMenuHover)
+                &:after
+                    width: 100%
+
+
+
+.communication
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media tablet
+        width: auto
+        flex-direction: column
+        align-items: flex-start
+    &__icon
+        margin-right: 10px
+        fill: var(--colorlinkHeader)
+        transition: 0.3s
+    &__list-item
+        &:hover
+            .communication__icon
+                fill: var(--colorMenuHover)
+        &:first-child
+            margin-right: 30px
+            @media tablet
+                margin-right: auto
+        @media mobile768
+            margin-top: 0.8vw
+    
+    &__link
+        text-decoration: none
+        color: var(--colorlinkHeader)
+        transition: 0.3s
+        font-family: var(--ffMedium)
+        font-size: 14px
+        line-height: floor((16 / 14), 2)
+        letter-spacing: 0.02em
+        display: flex
+        align-items: center
+        @media tablet
+            font-size: 1.6vw
+            line-height: 2
+        &:focus
+        &:hover
+            color: var(--colorMenuHover)
+        &:focus
+            .communication__icon
+                fill: var(--colorMenuHover)
